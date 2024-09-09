@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loca Car</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="form_content">
+          <h2>Crie sua conta</h2>
+          <p>Preencha o formulário</p>
+          <div class="input-group">
+            <div class="radio">
+              <input
+                type="radio"
+                id="brasileiro"
+                name="nacionalidade"
+                value="brasileiro"
+                checked
+              />
+              <label for="brasileiro">Brasileiro</label>
+              <input
+                type="radio"
+                id="estrangeiro"
+                name="nacionalidade"
+                value="estrangeiro"
+              />
+              <label for="estrangeiro">Estrangeiro</label>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div>
+              <label for="cpf">CPF</label>
+              <input type="text" name="cpf" pattern="\d{11}" />
+            </div>
+            <div>
+              <label for="nome">Nome</label>
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Nome completo"
+                required
+              />
+            </div>
+            <div class="radio">
+              <label for="sexo-m">Masculino</label>
+              <input type="radio" name="sexo" id="sexo-m" value="Masculino" />
+
+              <label for="sexo-f">Feminino</label>
+              <input type="radio" name="sexo" id="sexo-f" value="Feminino" />
+
+              <label for="sexo-n">Não Informar</label>
+              <input type="radio" name="sexo" id="sexo-n" value="na" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div>
+              <label for="dtnasc">Data de Nascimento</label>
+              <input type="date" name="dtnasc" id="dtnasc" />
+            </div>
+            <div>
+              <label for="celular">Celular</label>
+              <input
+                type="tel"
+                name="celular"
+                id="celular"
+                placeholder="xx xxxxx-xxxx"
+                required
+                pattern="([0-9]{2})\s([9])?([0-9]{4})-([0-9]{4})"
+              />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div>
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Seu email"
+                required
+              />
+            </div>
+            <div>
+              <label for="conf_email">Confirme seu E-mail</label>
+              <input
+                type="conf_email"
+                name="conf_email"
+                id="conf_email"
+                placeholder="Seu email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div>
+              <label for="cep"
+                >CEP:
+                <input
+                  type="text"
+                  name="cep"
+                  id="cep"
+                  class="mascCEP"
+                  value=""
+                  size="10"
+                  max="9"
+                  onblur="pesquisacep(this.value);"
+                />
+              </label>
+            </div>
+            <div>
+              <label for="rua"
+                >Rua:
+                <input type="text" name="rua" id="rua" size="60" />
+              </label>
+            </div>
+            <div>
+              <label for="n_casa">Número</label>
+              <input type="number" name="n_casa" id="n_casa" />
+            </div>
+            <div>
+              <label for="complemento">Complemento</label>
+              <input type="text" name="complemento" id="complemento" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div>
+              <label for="bairro"
+                >Bairro:
+                <input type="text" name="bairro" id="bairro" size="40" />
+              </label>
+            </div>
+            <div>
+              <label for="pais"
+                >País
+                <input type="text" name="pais" id="pais" size="60" />
+              </label>
+            </div>
+            <div>
+              <label for="estado">Estado</label>
+              <input type="text" name="estado" id="estado" />
+            </div>
+            <div>
+              <label for="cidade">Cidade</label>
+              <input type="text" name="cidade" id="cidade" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div>
+              <label for="senha">Senha</label>
+              <input type="password" name="senha" id="senha" size="20" />
+            </div>
+            <div>
+              <label for="conf_senha">Confirme sua senha</label>
+              <input
+                type="password"
+                name="conf_senha"
+                id="conf_senha"
+                size="20"
+              />
+            </div>
+            <div class="orientacoes_senha">
+              <p>Lembre-se:</p>
+              <p>No mínino 8 caracteres</p>
+              <p>Uma letra maiúscula</p>
+              <p>Uma letra minúscula</p>
+              <p>Um caractere especial</p>
+              <p>Senha e Confirme sua senha devem ser igual</p>
+            </div>
+          </div>
+
+          <button type="submit">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
