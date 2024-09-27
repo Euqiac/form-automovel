@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C2MG Autos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="header"></div>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand mb-0 h1">C2MG Autos</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav text-center me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="login.html"
+                  id="pagina_login"
+                  >Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="cadastro.html"
+                  id="pagina_cadastro"
+                  >Cadastro</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <form>
+          <div class="form_content">
+            <h1>Cadastre-se</h1>
+            <h3>Informações Pessoais</h3>
+            <div class="input-group">
+              <div class="radio">
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="brasileiro"
+                    name="nacionalidade"
+                    value="brasileiro"
+                    checked
+                  />
+                  <label for="brasileiro">Brasileiro</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="estrangeiro"
+                    name="nacionalidade"
+                    value="estrangeiro"
+                  />
+                  <label for="estrangeiro">Estrangeiro</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div>
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" pattern="\d{11}" required />
+              </div>
+              <div>
+                <label for="nome">Nome</label>
+                <input
+                  type="text"
+                  name="nome"
+                  id="nome"
+                  placeholder="Nome completo"
+                  required
+                />
+              </div>
+              <div class="radio">
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    name="sexo"
+                    id="sexo-m"
+                    value="Masculino"
+                  />
+                  <label for="sexo-m">Masculino</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    name="sexo"
+                    id="sexo-f"
+                    value="Feminino"
+                  />
+                  <label for="sexo-f">Feminino</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="sexo" id="sexo-n" value="na" />
+                  <label for="sexo-n">Não Informar</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div>
+                <label for="dtnasc">Data de Nascimento</label>
+                <input type="date" name="dtnasc" id="dtnasc" />
+              </div>
+              <div>
+                <label for="celular">Celular</label>
+                <input
+                  type="tel"
+                  name="celular"
+                  id="celular"
+                  placeholder="xx xxxxx-xxxx"
+                  required
+                  pattern="([0-9]{2})\s([9])?([0-9]{4})-([0-9]{4})"
+                />
+              </div>
+            </div>
+
+            <div class="input-group line_group">
+              <div>
+                <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Seu email"
+                  required
+                />
+              </div>
+              <div>
+                <label for="conf_email">Confirme seu E-mail</label>
+                <input
+                  type="conf_email"
+                  name="conf_email"
+                  id="conf_email"
+                  placeholder="Seu email"
+                  required
+                />
+              </div>
+            </div>
+            <h3>Endereço</h3>
+            <div class="input-group">
+              <div>
+                <label for="cep"
+                  >CEP:
+                  <input
+                    type="text"
+                    name="cep"
+                    id="cep"
+                    class="mascCEP"
+                    value=""
+                    size="10"
+                    max="9"
+                    onblur="pesquisacep(this.value);"
+                  />
+                </label>
+              </div>
+              <div>
+                <label for="rua"
+                  >Rua:
+                  <input type="text" name="rua" id="rua" size="60" />
+                </label>
+              </div>
+              <div>
+                <label for="n_casa">Número</label>
+                <input type="number" name="n_casa" id="n_casa" />
+              </div>
+              <div>
+                <label for="complemento">Complemento</label>
+                <input type="text" name="complemento" id="complemento" />
+              </div>
+            </div>
+
+            <div class="input-group line_group">
+              <div>
+                <label for="bairro"
+                  >Bairro:
+                  <input type="text" name="bairro" id="bairro" size="40" />
+                </label>
+              </div>
+              <div>
+                <label for="pais"
+                  >País
+                  <input type="text" name="pais" id="pais" size="60" />
+                </label>
+              </div>
+              <div>
+                <label for="estado">Estado</label>
+                <input type="text" name="estado" id="estado" />
+              </div>
+              <div>
+                <label for="cidade">Cidade</label>
+                <input type="text" name="cidade" id="cidade" />
+              </div>
+            </div>
+            <h3>Digite sua senha</h3>
+            <div class="input-group">
+              <div>
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" size="20" />
+              </div>
+              <div>
+                <label for="conf_senha">Confirme sua senha</label>
+                <input
+                  type="password"
+                  name="conf_senha"
+                  id="conf_senha"
+                  size="20"
+                />
+              </div>
+              <div class="orientacoes_senha">
+                <p>Lembre-se:</p>
+                <p>No mínino 8 caracteres</p>
+                <p>Uma letra maiúscula</p>
+                <p>Uma letra minúscula</p>
+                <p>Um caractere especial</p>
+                <p>Senha e Confirme sua senha devem ser igual</p>
+              </div>
+            </div>
+            <div class="input-aceite">
+              <input type="checkbox" name="aceite" id="aceite" />
+              <p>
+                Estou ciente e de acordo com
+                <a href="">Politica de privacidade</a>
+              </p>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
